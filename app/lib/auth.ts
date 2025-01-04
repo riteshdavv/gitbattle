@@ -24,6 +24,13 @@ export const NEXT_AUTH = {
             session.githubUsername = token.githubUsername; // Add username to session
             return session;
         },
-        
+        pages: {
+            signIn: "/signin", // Sign-in page
+            signOut: "/signout", // Sign-out page
+            error: "/error", // Error page
+            verifyRequest: "/verify-request", // Verification request page
+            newUser: "/user", // New users are redirected here by default
+        },
+        secret: process.env.NEXTAUTH_SECRET
     }
 }
