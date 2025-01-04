@@ -9,6 +9,25 @@ datasource db {
 
 model User{
   id        Int @id @default(autoincrement())
+  username  String @unique
   email     String @unique
   password  String
+  githubProfile String
+  badges    String?
+  totalPoints Int?
+}
+
+model Badge{
+  id Int @id @default(autoincrement())
+  title String @unique
+  description String
+  points Int
+  criteria String
+  iconURL String
+}
+
+model Point{
+  id Int @id @default(autoincrement())
+  name String
+  description String
 }
